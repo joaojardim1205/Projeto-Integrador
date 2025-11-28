@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Dashboard Responsável</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Maria Santos</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-responsavel.html" class="active">🏠 Dashboard</a></li>
+                <li><a href="filhos-responsavel.html">👨‍👩‍👧‍👦 Meus Filhos</a></li>
+                <li><a href="desempenho-responsavel.html">📊 Desempenho</a></li>
+                <li><a href="frequencia-responsavel.html">📅 Frequência</a></li>
+                <li><a href="comunicados-responsavel.html">📢 Comunicados</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Acompanhamento Escolar</h1>
+                <p>Olá, Maria! Acompanhe o desempenho dos seus filhos na escola.</p>
+            </div>
+
+            <!-- Seleção de Filho -->
+            <div class="card mb-xl">
+                <div class="card-header">
+                    <h2 class="card-title">Selecionar Filho</h2>
+                </div>
+
+                <div style="display: flex; gap: var(--md); flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="selectChild('ana')">Ana Silva</button>
+                    <button class="btn btn-secondary" onclick="selectChild('pedro')">Pedro Santos</button>
+                </div>
+            </div>
+
+            <!-- Cards de Resumo -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value" id="media-geral">8.2</div>
+                    <div class="stat-label">Média Geral</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="presenca">95%</div>
+                    <div class="stat-label">Presença</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-value">1º</div>
+                    <div class="stat-label">Bimestre</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-value" id="pendencias">1</div>
+                    <div class="stat-label">Pendências</div>
+                </div>
+            </div>
+
+            <!-- Notas por Disciplina -->
+            <div class="card grades-table">
+                <div class="card-header">
+                    <h2 class="card-title">Desempenho de <span id="nome-aluno">Ana Silva</span></h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Av1</th>
+                                <th>Av2</th>
+                                <th>Av3</th>
+                                <th>Média</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notas-body">
+                            <tr>
+                                <td>Matemática</td>
+                                <td>8.5</td>
+                                <td>7.0</td>
+                                <td>9.0</td>
+                                <td>8.2</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Português</td>
+                                <td>7.5</td>
+                                <td>8.0</td>
+                                <td>7.0</td>
+                                <td>7.5</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>6.0</td>
+                                <td>5.5</td>
+                                <td>6.5</td>
+                                <td>6.0</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Química</td>
+                                <td>5.0</td>
+                                <td>4.5</td>
+                                <td>5.5</td>
+                                <td>5.0</td>
+                                <td><span class="badge badge-warning">Recuperação</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Frequência Detalhada -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Frequência por Disciplina</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Presença</th>
+                                <th>Faltas</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemática</td>
+                                <td>95%</td>
+                                <td>3</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                            <tr>
+                                <td>Português</td>
+                                <td>98%</td>
+                                <td>1</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>92%</td>
+                                <td>5</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                            <tr>
+                                <td>Química</td>
+                                <td>88%</td>
+                                <td>7</td>
+                                <td><span class="badge badge-warning">Atenção</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Comunicados Recentes -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Comunicados da Escola</h2>
+                </div>
+
+                <ul class="notifications-list">
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Reunião de Pais - 1º Bimestre</strong>
+                                <p>Convocamos todos os responsáveis para reunião no dia 15/12 às 19h.</p>
+                            </div>
+                            <div class="notification-time">há 2 dias</div>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Nota de Ana em Matemática</strong>
+                                <p>Avaliação bimestral lançada. Média atual: 8.2</p>
+                            </div>
+                            <div class="notification-time">há 1 semana</div>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Feriado - Dia da Consciência Negra</strong>
+                                <p>A escola não funcionará no dia 20/11.</p>
+                            </div>
+                            <div class="notification-time">há 2 semanas</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Ações -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Baixar Boletim</a>
+                <a href="#" class="btn btn-secondary">Agendar Reunião</a>
+                <a href="#" class="btn btn-secondary">Falar com Professor</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

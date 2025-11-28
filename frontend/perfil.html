@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Perfil</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Dashboard</a></li>
+                <li><a href="lancar-notas.html">📝 Lançar Notas</a></li>
+                <li><a href="criar-plano-aula.html">📋 Criar Plano</a></li>
+                <li><a href="gerenciar-turmas.html">👥 Gerenciar Turmas</a></li>
+                <li><a href="relatorios.html">📊 Relatórios</a></li>
+                <li><a href="perfil.html" class="active">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Meu Perfil</h1>
+                <p>Gerencie suas informações pessoais e configurações da conta.</p>
+            </div>
+
+            <!-- Formulário de Perfil -->
+            <div class="card profile-form">
+                <div class="card-header">
+                    <h2 class="card-title">Informações Pessoais</h2>
+                </div>
+
+                <form class="form" onsubmit="salvarPerfil(event)">
+                    <!-- Avatar -->
+                    <div class="avatar-upload">
+                        <div class="avatar-preview">JS</div>
+                        <div>
+                            <button type="button" class="btn btn-secondary" onclick="alterarFoto()">Alterar Foto</button>
+                            <p class="text-xs mt-sm">JPG, PNG ou GIF. Máx. 2MB</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome Completo *</label>
+                            <input type="text" id="nome" class="form-input" value="João Silva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" class="form-input" value="joao.silva@escola.edu.br" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" id="telefone" class="form-input" value="(11) 99999-9999" placeholder="(11) 99999-9999">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="data-nascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" id="data-nascimento" class="form-input" value="1985-03-15">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="disciplina" class="form-label">Disciplina Principal</label>
+                            <select id="disciplina" class="form-input">
+                                <option value="matematica" selected>Matemática</option>
+                                <option value="portugues">Português</option>
+                                <option value="fisica">Física</option>
+                                <option value="quimica">Química</option>
+                                <option value="biologia">Biologia</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tempo-servico" class="form-label">Tempo de Serviço</label>
+                            <input type="text" id="tempo-servico" class="form-input" value="12 anos" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="biografia" class="form-label">Biografia</label>
+                        <textarea id="biografia" class="form-input" rows="4" placeholder="Conte um pouco sobre você, sua experiência e metodologia de ensino...">Professor de Matemática com 12 anos de experiência no ensino médio. Especialista em metodologias ativas e tecnologia educacional.</textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Configurações de Segurança -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Segurança</h2>
+                </div>
+
+                <div style="display: grid; gap: var(--lg);">
+                    <div>
+                        <h3 style="margin-bottom: var(--md);">Alterar Senha</h3>
+                        <form class="form" onsubmit="alterarSenha(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="senha-atual" class="form-label">Senha Atual</label>
+                                    <input type="password" id="senha-atual" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nova-senha" class="form-label">Nova Senha</label>
+                                    <input type="password" id="nova-senha" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmar-senha" class="form-label">Confirmar Nova Senha</label>
+                                <input type="password" id="confirmar-senha" class="form-input" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Alterar Senha</button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: var(--md);">Autenticação de Dois Fatores</h3>
+                        <p class="text-sm mb-md">Adicione uma camada extra de segurança à sua conta.</p>
+
+                        <div style="display: flex; align-items: center; gap: var(--md);">
+                            <span style="color: var(--danger-red);">🔴 Desativado</span>
+                            <button class="btn btn-secondary" onclick="ativar2FA()">Ativar 2FA</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferências -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Preferências</h2>
+                </div>
+
+                <form class="form" onsubmit="salvarPreferencias(event)">
+                    <div style="display: grid; gap: var(--lg);">
+                        <div>
+                            <h3 style="margin-bottom: var(--md);">Notificações</h3>
+
+                            <div style="display: grid; gap: var(--sm);">
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="notif-notas" checked>
+                                    Notificações sobre lançamento de notas
+                                </label>
+
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="notif-frequencia" checked>
+                                    Alertas de frequência baixa
+                                </label>
+
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="notif-planos">
+                                    Novos planos de aula publicados
+                                </label>
+
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="notif-comunicados" checked>
+                                    Comunicados da escola
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom: var(--md);">Interface</h3>
+
+                            <div style="display: grid; gap: var(--sm);">
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="auto-save" checked>
+                                    Salvar automaticamente rascunhos
+                                </label>
+
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="compact-view">
+                                    Visualização compacta de tabelas
+                                </label>
+
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="dark-mode">
+                                    Modo escuro (em breve)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom: var(--md);">Relatórios</h3>
+
+                            <div style="display: grid; gap: var(--sm);">
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="relatorios-auto">
+                                    Gerar relatórios automaticamente
+                                </label>
+
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="relatorios-email" checked>
+                                    Enviar relatórios por email
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions" style="margin-top: var(--lg);">
+                        <button type="submit" class="btn btn-primary">Salvar Preferências</button>
+                        <button type="button" class="btn btn-secondary" onclick="restaurarPadroes()">Restaurar Padrões</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Dados da Conta -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Dados da Conta</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--lg);">
+                    <div>
+                        <h3 style="margin-bottom: var(--sm);">ID do Usuário</h3>
+                        <p class="text-sm">PROF-2024-001</p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: var(--sm);">Data de Cadastro</h3>
+                        <p class="text-sm">15/02/2024</p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: var(--sm);">Último Acesso</h3>
+                        <p class="text-sm">Hoje, 14:30</p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: var(--sm);">Status da Conta</h3>
+                        <span class="badge badge-success">Ativa</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--lg); padding-top: var(--lg); border-top: 1px solid var(--gray-300);">
+                    <h3 style="margin-bottom: var(--md); color: var(--danger-red);">Zona de Perigo</h3>
+                    <p class="text-sm mb-lg">Ações irreversíveis. Tenha cuidado!</p>
+
+                    <div style="display: flex; gap: var(--md);">
+                        <button class="btn btn-warning" onclick="exportarDados()">Exportar Dados</button>
+                        <button class="btn btn-danger" onclick="excluirConta()">Excluir Conta</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" onclick="salvarPerfil()">Salvar Alterações</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelarAlteracoes()">Cancelar</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirmar Exclusão</h3>
+                <button class="modal-close" onclick="fecharDeleteModal()">&times;</button>
+            </div>
+
+            <div style="padding: var(--lg);">
+                <p style="margin-bottom: var(--lg);">Tem certeza que deseja excluir sua conta? Esta ação é irreversível e todos os seus dados serão perdidos.</p>
+
+                <div class="form-group">
+                    <label for="confirm-delete" class="form-label">Digite "EXCLUIR" para confirmar</label>
+                    <input type="text" id="confirm-delete" class="form-input" placeholder="EXCLUIR">
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-secondary" onclick="fecharDeleteModal()">Cancelar</button>
+                    <button class="btn btn-danger" onclick="confirmarExclusao()">Excluir Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

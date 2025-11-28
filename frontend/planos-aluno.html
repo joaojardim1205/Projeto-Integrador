@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Planos de Aula</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">2</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-small" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Ana Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-aluno.html">🏠 Dashboard</a></li>
+                <li><a href="notas-aluno.html">📊 Minhas Notas</a></li>
+                <li><a href="planos-aluno.html" class="ativo">📝 Planos de Aula</a></li>
+                <li><a href="frequencia-aluno.html">📅 Frequência</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Planos de Aula</h1>
+                <p>Veja os planos de aula das suas disciplinas.</p>
+            </div>
+
+            <!-- Seleção de Disciplina -->
+            <div class="card margin-bottom-large">
+                <div class="card-header">
+                    <h2 class="card-title">Selecionar Disciplina</h2>
+                </div>
+                <div style="display: flex; gap: var(--md); flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="selectDisciplina('matematica')">Matemática</button>
+                    <button class="btn btn-secondary" onclick="selectDisciplina('portugues')">Português</button>
+                    <button class="btn btn-secondary" onclick="selectDisciplina('fisica')">Física</button>
+                    <button class="btn btn-secondary" onclick="selectDisciplina('quimica')">Química</button>
+                    <button class="btn btn-secondary" onclick="selectDisciplina('biologia')">Biologia</button>
+                </div>
+            </div>
+
+            <!-- Plano de Aula -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Plano de Aula - <span id="selected-discipline">Matemática</span></h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Conteúdo</th>
+                                <th>Atividades</th>
+                                <th>Material</th>
+                            </tr>
+                        </thead>
+                        <tbody id="plan-body">
+                            <tr>
+                                <td>10/12/2024</td>
+                                <td>Equações do 1º grau</td>
+                                <td>Resolução de exercícios</td>
+                                <td>Livro p. 45-50</td>
+                            </tr>
+                            <tr>
+                                <td>11/12/2024</td>
+                                <td>Sistemas de equações</td>
+                                <td>Atividade prática em dupla</td>
+                                <td>Apostila + Calculadora</td>
+                            </tr>
+                            <tr>
+                                <td>12/12/2024</td>
+                                <td>Revisão para prova</td>
+                                <td>Estudo dirigido</td>
+                                <td>Lista de exercícios</td>
+                            </tr>
+                            <tr>
+                                <td>13/12/2024</td>
+                                <td>Prova - Av1</td>
+                                <td>Avaliação escrita</td>
+                                <td>Caneta + régua</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Upcoming Classes -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Próximas Aulas</h2>
+                </div>
+
+                <ul class="notifications-list">
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>17/12/2024 - Matemática</strong>
+                                <p>Funções lineares • Atividade em grupo</p>
+                            </div>
+                            <div class="notification-time">em 3 dias</div>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>18/12/2024 - Português</strong>
+                                <p>Análise sintática • Exercícios de fixação</p>
+                            </div>
+                            <div class="notification-time">em 4 dias</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Actions -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Baixar Plano Completo (PDF)</a>
+                <a href="#" class="btn btn-secondary">Ver Material de Apoio</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

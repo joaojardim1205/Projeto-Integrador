@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Frequência</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Dashboard</a></li>
+                <li><a href="turmas-professor.html">📚 Minhas Turmas</a></li>
+                <li><a href="alunos-professor.html">👥 Alunos</a></li>
+                <li><a href="lancar-notas.html">📊 Lançar Notas</a></li>
+                <li><a href="frequencia-professor.html" class="active">📅 Frequência</a></li>
+                <li><a href="criar-plano-aula.html">📝 Planos de Aula</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Frequência</h1>
+                <p>Marque a presença dos alunos nas aulas.</p>
+            </div>
+
+            <!-- Seleção de Turma e Data -->
+            <div class="card mb-lg">
+                <div class="card-header">
+                    <h2 class="card-title">Selecionar Turma e Data</h2>
+                </div>
+                <div style="display: flex; gap: var(--md); flex-wrap: wrap;">
+                    <select class="form-control" style="flex: 1; min-width: 200px;">
+                        <option>Selecione a Turma</option>
+                        <option>9º A - Matemática</option>
+                        <option>9º B - Matemática</option>
+                        <option>8º A - Física</option>
+                        <option>8º B - Física</option>
+                    </select>
+                    <input type="date" class="form-control" style="flex: 1; min-width: 200px;">
+                    <button class="btn btn-primary">Carregar Alunos</button>
+                </div>
+            </div>
+
+            <!-- Lista de Presença -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Lista de Presença - 9º A - Matemática - 15/12/2024</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome do Aluno</th>
+                                <th>Presença</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ana Silva</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="presente">Presente</option>
+                                        <option value="ausente">Ausente</option>
+                                        <option value="justificado">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><span class="badge badge-success">Presente</span></td>
+                                <td><button class="btn btn-sm btn-secondary">Salvar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Mendes</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="presente">Presente</option>
+                                        <option value="ausente" selected>Ausente</option>
+                                        <option value="justificado">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><span class="badge badge-danger">Ausente</span></td>
+                                <td><button class="btn btn-sm btn-secondary">Salvar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Lima</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="presente">Presente</option>
+                                        <option value="ausente">Ausente</option>
+                                        <option value="justificado">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><span class="badge badge-success">Presente</span></td>
+                                <td><button class="btn btn-sm btn-secondary">Salvar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Maria Costa</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="presente">Presente</option>
+                                        <option value="ausente">Ausente</option>
+                                        <option value="justificado">Justificado</option>
+                                    </select>
+                                </td>
+                                <td><span class="badge badge-success">Presente</span></td>
+                                <td><button class="btn btn-sm btn-secondary">Salvar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Ações Rápidas -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Salvar Todas as Frequências</a>
+                <a href="#" class="btn btn-secondary">Marcar Todos Presentes</a>
+                <a href="relatorios.html" class="btn btn-secondary">Ver Relatórios</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

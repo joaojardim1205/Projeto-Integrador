@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Frequência</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">2</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Ana Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-aluno.html">🏠 Dashboard</a></li>
+                <li><a href="notas-aluno.html">📊 Minhas Notas</a></li>
+                <li><a href="planos-aluno.html">📝 Planos de Aula</a></li>
+                <li><a href="frequencia-aluno.html" class="active">📅 Frequência</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Frequência</h1>
+                <p>Veja sua frequência nas aulas e justificativas de faltas.</p>
+            </div>
+
+            <!-- Resumo de Frequência -->
+            <div class="card mb-lg">
+                <div class="card-header">
+                    <h2 class="card-title">Resumo Geral</h2>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: var(--lg);">
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--sm);">
+                            <span>Taxa de Presença</span>
+                            <span style="font-weight: 600;">95%</span>
+                        </div>
+                        <div style="background-color: var(--gray-200); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background-color: var(--success-green); height: 100%; width: 95%;"></div>
+                        </div>
+                        <p class="text-xs mt-sm">115 de 125 aulas • 10 faltas</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--lg); padding-top: var(--lg); border-top: 1px solid var(--gray-300);">
+                    <p class="text-sm">
+                        <strong>Limite para aprovação:</strong> 75% de frequência<br>
+                        <strong>Situação atual:</strong> <span style="color: var(--success-green); font-weight: 600;">Aprovado</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Frequência por Disciplina -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Frequência por Disciplina</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Presença</th>
+                                <th>Faltas</th>
+                                <th>Total de Aulas</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemática</td>
+                                <td>95%</td>
+                                <td>3</td>
+                                <td>60</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                            <tr>
+                                <td>Português</td>
+                                <td>98%</td>
+                                <td>1</td>
+                                <td>60</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>92%</td>
+                                <td>5</td>
+                                <td>60</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                            <tr>
+                                <td>Química</td>
+                                <td>88%</td>
+                                <td>7</td>
+                                <td>60</td>
+                                <td><span class="badge badge-warning">Atenção</span></td>
+                            </tr>
+                            <tr>
+                                <td>Biologia</td>
+                                <td>96%</td>
+                                <td>2</td>
+                                <td>60</td>
+                                <td><span class="badge badge-success">Ok</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Justificativas de Faltas -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Justificativas de Faltas</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Disciplina</th>
+                                <th>Motivo</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10/12/2024</td>
+                                <td>Química</td>
+                                <td>Consulta médica</td>
+                                <td><span class="badge badge-success">Justificada</span></td>
+                            </tr>
+                            <tr>
+                                <td>05/12/2024</td>
+                                <td>Física</td>
+                                <td>Problemas de saúde</td>
+                                <td><span class="badge badge-success">Justificada</span></td>
+                            </tr>
+                            <tr>
+                                <td>01/12/2024</td>
+                                <td>Matemática</td>
+                                <td>Viagem familiar</td>
+                                <td><span class="badge badge-warning">Pendente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Solicitar Justificativa</a>
+                <a href="#" class="btn btn-secondary">Ver Calendário</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

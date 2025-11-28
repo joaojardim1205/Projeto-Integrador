@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Dashboard Professor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html" class="active">🏠 Dashboard</a></li>
+                <li><a href="turmas-professor.html">📚 Minhas Turmas</a></li>
+                <li><a href="alunos-professor.html">👥 Alunos</a></li>
+                <li><a href="lancar-notas.html">📊 Lançar Notas</a></li>
+                <li><a href="frequencia-professor.html">📅 Frequência</a></li>
+                <li><a href="criar-plano-aula.html">📝 Planos de Aula</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Dashboard Professor</h1>
+                <p>Olá, Prof. João! Gerencie suas turmas e acompanhe o desempenho dos alunos.</p>
+            </div>
+
+            <!-- Cards de Resumo -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Turmas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">120</div>
+                    <div class="stat-label">Alunos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value">7.8</div>
+                    <div class="stat-label">Média Geral</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value">92%</div>
+                    <div class="stat-label">Presença Média</div>
+                </div>
+            </div>
+
+            <!-- Turmas Atuais -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Turmas Atuais</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Turma</th>
+                                <th>Disciplina</th>
+                                <th>Alunos</th>
+                                <th>Média</th>
+                                <th>Presença</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9º A</td>
+                                <td>Matemática</td>
+                                <td>32</td>
+                                <td>8.1</td>
+                                <td>94%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9º B</td>
+                                <td>Matemática</td>
+                                <td>28</td>
+                                <td>7.5</td>
+                                <td>91%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8º A</td>
+                                <td>Física</td>
+                                <td>30</td>
+                                <td>7.9</td>
+                                <td>93%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8º B</td>
+                                <td>Física</td>
+                                <td>30</td>
+                                <td>7.2</td>
+                                <td>89%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Próximas Avaliações -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Próximas Avaliações</h2>
+                </div>
+
+                <ul class="notifications-list">
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Av2 - Matemática 9º A</strong>
+                                <p>Data: 15/12/2024 • Tipo: Prova</p>
+                            </div>
+                            <div class="notification-time">em 5 dias</div>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Av1 - Física 8º B</strong>
+                                <p>Data: 20/12/2024 • Tipo: Atividade Prática</p>
+                            </div>
+                            <div class="notification-time">em 10 dias</div>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Recuperação - Matemática 9º B</strong>
+                                <p>Data: 10/01/2025 • Tipo: Prova</p>
+                            </div>
+                            <div class="notification-time">em 3 semanas</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Alunos com Dificuldades -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Alunos Requerem Atenção</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Turma</th>
+                                <th>Média</th>
+                                <th>Faltas</th>
+                                <th>Motivo</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Carlos Mendes</td>
+                                <td>9º A</td>
+                                <td>5.2</td>
+                                <td>8</td>
+                                <td>Baixo desempenho</td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary">Contato</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ana Costa</td>
+                                <td>8º B</td>
+                                <td>6.8</td>
+                                <td>12</td>
+                                <td>Faltas excessivas</td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary">Contato</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Lima</td>
+                                <td>9º B</td>
+                                <td>4.9</td>
+                                <td>5</td>
+                                <td>Baixo desempenho</td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary">Contato</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Ações Rápidas -->
+            <div class="quick-actions">
+                <a href="criar-plano-aula.html" class="btn btn-primary">Criar Plano de Aula</a>
+                <a href="#" class="btn btn-secondary">Lançar Notas</a>
+                <a href="#" class="btn btn-secondary">Marcar Frequência</a>
+                <a href="relatorios.html" class="btn btn-secondary">Ver Relatórios</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

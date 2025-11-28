@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Criar Plano de Aula</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Painel</a></li>
+                <li><a href="lancar-notas.html">📝 Lançar Notas</a></li>
+                <li><a href="criar-plano-aula.html" class="ativo">📋 Criar Plano</a></li>
+                <li><a href="gerenciar-turmas.html">👥 Gerenciar Turmas</a></li>
+                <li><a href="relatorios.html">📊 Relatórios</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <div class="breadcrumb">
+                    <a href="dashboard-professor.html">Dashboard</a> > Criar Plano de Aula
+                </div>
+                <h1>Criar Plano de Aula</h1>
+                <p>Organize e planeje suas aulas de forma estruturada.</p>
+            </div>
+
+            <!-- Formulário do Plano -->
+            <div class="card plan-form">
+                <div class="card-header">
+                    <h2 class="card-title">Novo Plano de Aula</h2>
+                </div>
+
+                <form class="form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="title" class="form-label">Título da Aula *</label>
+                            <input type="text" id="title" name="title" class="form-input" placeholder="Ex: Equações do 2º Grau" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Disciplina *</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="">Selecione...</option>
+                                <option value="matematica" selected>Matemática</option>
+                                <option value="portugues">Português</option>
+                                <option value="fisica">Física</option>
+                                <option value="quimica">Química</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="class" class="form-label">Turma(s) *</label>
+                            <select id="class" name="class" class="form-input" required>
+                                <option value="">Selecione...</option>
+                                <option value="3a" selected>3º A - Matemática</option>
+                                <option value="3b">3º B - Matemática</option>
+                                <option value="2c">2º C - Física</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="data" class="form-label">Data da Aula *</label>
+                            <input type="date" id="data" name="data" class="form-input" value="2024-11-25" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration" class="form-label">Duração (minutos)</label>
+                            <input type="number" id="duration" name="duration" class="form-input" value="90" min="30" max="180">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lesson-type" class="form-label">Tipo de Aula</label>
+                            <select id="lesson-type" name="lesson-type" class="form-input">
+                                <option value="teorica">Teórica</option>
+                                <option value="pratica">Prática</option>
+                                <option value="teorico-pratica">Teórico-Prática</option>
+                                <option value="avaliacao">Avaliação</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="objectives" class="form-label">Objetivos de Aprendizagem *</label>
+                        <textarea id="objectives" name="objectives" class="form-input" rows="3" placeholder="Descreva os objetivos que os alunos devem alcançar..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content" class="form-label">Conteúdo Programático *</label>
+                        <div class="editor-container">
+                            <div class="editor-toolbar">
+                                <button type="button" class="btn-editor" title="Negrito"><strong>B</strong></button>
+                                <button type="button" class="btn-editor" title="Itálico"><em>I</em></button>
+                                <button type="button" class="btn-editor" title="Sublinhado"><u>U</u></button>
+                                <span style="margin: 0 8px;">|</span>
+                                <button type="button" class="btn-editor" title="Lista">•</button>
+                                <button type="button" class="btn-editor" title="Numeração">1.</button>
+                                <span style="margin: 0 8px;">|</span>
+                                <button type="button" class="btn-editor" title="Inserir Link">🔗</button>
+                                <button type="button" class="btn-editor" title="Inserir Imagem">📷</button>
+                            </div>
+                            <div class="editor-content" contenteditable="true" id="content-editor">
+                                <p>Digite o conteúdo da aula aqui...</p>
+                                <ul>
+                                    <li>Tópico 1</li>
+                                    <li>Tópico 2</li>
+                                    <li>Tópico 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="methodology" class="form-label">Metodologia</label>
+                            <textarea id="methodology" name="methodology" class="form-input" rows="3" placeholder="Descreva como a aula será ministrada..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resources" class="form-label">Recursos Necessários</label>
+                            <textarea id="resources" name="resources" class="form-input" rows="3" placeholder="Materiais, equipamentos, softwares necessários..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="evaluation" class="form-label">Forma de Avaliação</label>
+                        <textarea id="evaluation" name="evaluation" class="form-input" rows="2" placeholder="Como será avaliado o aprendizado dos alunos..."></textarea>
+                    </div>
+
+                    <!-- Anexos -->
+                    <div class="form-group">
+                        <label class="form-label">Anexos</label>
+                        <div style="display: flex; gap: var(--sm); margin-bottom: var(--sm);">
+                            <button type="button" class="btn btn-secondary" onclick="adicionarArquivo()">
+                                📎 Adicionar Arquivo
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="adicionarLink()">
+                                🔗 Adicionar Link
+                            </button>
+                        </div>
+
+                        <div id="attachments-list" class="attachments-list">
+                            <!-- Anexos serão adicionados aqui dinamicamente -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="salvarRascunho()">Salvar como Rascunho</button>
+                <button type="button" class="btn btn-primary" onclick="publicarPlano()">Publicar Plano</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Adicionar Link -->
+    <div id="linkModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Adicionar Link</h3>
+                <button class="modal-close" onclick="fecharLinkModal()">&times;</button>
+            </div>
+
+            <div style="padding: var(--lg);">
+                <div class="form-group">
+                    <label for="link-title" class="form-label">Título do Link</label>
+                    <input type="text" id="link-title" class="form-input" placeholder="Ex: Vídeo explicativo">
+                </div>
+
+                <div class="form-group">
+                    <label for="link-url" class="form-label">URL</label>
+                    <input type="url" id="link-url" class="form-input" placeholder="https://exemplo.com">
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-secondary" onclick="fecharLinkModal()">Cancelar</button>
+                    <button class="btn btn-primary" onclick="salvarLink()">Adicionar Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Entrar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-card fade-in">
+            <div class="login-header">
+                <div class="login-logo">EasyClass</div>
+                <p class="login-subtitle">Plataforma Integrada de Gestão Acadêmica</p>
+                <button id="theme-toggle" class="btn btn-secondary btn-small" title="Alternar Tema" style="position: absolute; top: var(--lg); right: var(--lg);">🌙</button>
+            </div>
+
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Senha</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" class="form-input" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="lembrar" name="lembrar" class="checkbox-input">
+                    <label for="remember">Lembrar-me</label>
+                </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            </form>
+
+            <div class="forgot-password">
+                <a href="recuperar-senha.html">Esqueceu sua senha?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

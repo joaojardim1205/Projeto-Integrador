@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Minhas Notas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">2</span>
+                    </a>
+                    <button id="alternar-tema" class="btn btn-secondary btn-small" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Ana Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-aluno.html">🏠 Dashboard</a></li>
+                <li><a href="notas-aluno.html" class="active">📊 Minhas Notas</a></li>
+                <li><a href="planos-aluno.html">📝 Planos de Aula</a></li>
+                <li><a href="frequencia-aluno.html">📅 Frequência</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Minhas Notas</h1>
+                <p>Veja todas as suas notas e médias por disciplina.</p>
+            </div>
+
+            <!-- Grades by Subject -->
+            <div class="card grades-table">
+                <div class="card-header">
+                    <h2 class="card-title">Notas por Disciplina</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Av1</th>
+                                <th>Av2</th>
+                                <th>Av3</th>
+                                <th>Média</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemática</td>
+                                <td>8.5</td>
+                                <td>7.0</td>
+                                <td>9.0</td>
+                                <td>8.2</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Português</td>
+                                <td>7.5</td>
+                                <td>8.0</td>
+                                <td>7.0</td>
+                                <td>7.5</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>6.0</td>
+                                <td>5.5</td>
+                                <td>6.5</td>
+                                <td>6.0</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Química</td>
+                                <td>5.0</td>
+                                <td>4.5</td>
+                                <td>5.5</td>
+                                <td>5.0</td>
+                                <td><span class="badge badge-warning">Recuperação</span></td>
+                            </tr>
+                            <tr>
+                                <td>Biologia</td>
+                                <td>8.0</td>
+                                <td>7.5</td>
+                                <td>-</td>
+                                <td>7.8</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Grades Evolution -->
+            <div class="chart-container">
+                <h2 class="card-title margin-bottom-large">Evolução de Notas</h2>
+                <div class="chart-placeholder">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📈</div>
+                        <p>Gráfico de evolução das notas ao longo do tempo</p>
+                        <p class="text-small">Av1 • Av2 • Av3 • Av4 • Av5</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Baixar Boletim (PDF)</a>
+                <a href="#" class="btn btn-secondary">Ver Detalhes por Disciplina</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

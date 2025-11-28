@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Dashboard Aluno</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">2</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Ana Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-aluno.html" class="active">🏠 Dashboard</a></li>
+                <li><a href="notas-aluno.html">📊 Minhas Notas</a></li>
+                <li><a href="planos-aluno.html">📝 Planos de Aula</a></li>
+                <li><a href="frequencia-aluno.html">📅 Frequência</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Meu Desempenho</h1>
+                <p>Olá, Ana! Aqui você pode acompanhar suas notas e progresso acadêmico.</p>
+            </div>
+
+            <!-- Cards de Resumo -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value">8.2</div>
+                    <div class="stat-label">Média Geral</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Presença</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-value">1º</div>
+                    <div class="stat-label">Bimestre</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value">+0.3</div>
+                    <div class="stat-label">Evolução</div>
+                </div>
+            </div>
+
+            <!-- Notas por Disciplina -->
+            <div class="card grades-table">
+                <div class="card-header">
+                    <h2 class="card-title">Notas por Disciplina</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>Av1</th>
+                                <th>Av2</th>
+                                <th>Av3</th>
+                                <th>Média</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemática</td>
+                                <td>8.5</td>
+                                <td>7.0</td>
+                                <td>9.0</td>
+                                <td>8.2</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Português</td>
+                                <td>7.5</td>
+                                <td>8.0</td>
+                                <td>7.0</td>
+                                <td>7.5</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>6.0</td>
+                                <td>5.5</td>
+                                <td>6.5</td>
+                                <td>6.0</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Química</td>
+                                <td>5.0</td>
+                                <td>4.5</td>
+                                <td>5.5</td>
+                                <td>5.0</td>
+                                <td><span class="badge badge-warning">Recuperação</span></td>
+                            </tr>
+                            <tr>
+                                <td>Biologia</td>
+                                <td>8.0</td>
+                                <td>7.5</td>
+                                <td>-</td>
+                                <td>7.8</td>
+                                <td><span class="badge badge-success">Aprovado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Evolução de Notas -->
+            <div class="chart-container">
+                <h2 class="card-title mb-lg">Evolução de Notas</h2>
+                <div class="chart-placeholder">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📈</div>
+                        <p>Gráfico de evolução das notas ao longo do tempo</p>
+                        <p class="text-sm">Av1 • Av2 • Av3 • Av4 • Av5</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frequência -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Frequência</h2>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: var(--lg);">
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: var(--sm);">
+                            <span>Taxa de Presença</span>
+                            <span style="font-weight: 600;">95%</span>
+                        </div>
+                        <div style="background-color: var(--gray-200); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background-color: var(--success-green); height: 100%; width: 95%;"></div>
+                        </div>
+                        <p class="text-xs mt-sm">115 de 125 aulas • 10 faltas</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--lg); padding-top: var(--lg); border-top: 1px solid var(--gray-300);">
+                    <p class="text-sm">
+                        <strong>Limite para aprovação:</strong> 75% de frequência<br>
+                        <strong>Situação atual:</strong> <span style="color: var(--success-green); font-weight: 600;">Aprovado</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Baixar Boletim (PDF)</a>
+                <a href="#" class="btn btn-secondary">Ver Planos de Aula</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

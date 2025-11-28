@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Notificações</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Dashboard</a></li>
+                <li><a href="turmas-professor.html">📚 Minhas Turmas</a></li>
+                <li><a href="alunos-professor.html">👥 Alunos</a></li>
+                <li><a href="lancar-notas.html">📊 Lançar Notas</a></li>
+                <li><a href="frequencia-professor.html">📅 Frequência</a></li>
+                <li><a href="criar-plano-aula.html">📝 Planos de Aula</a></li>
+                <li><a href="notificacoes.html" class="active">🔔 Notificações</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Notificações</h1>
+                <p>Fique por dentro das últimas atualizações e avisos importantes.</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Filtros</h2>
+                </div>
+                <div class="flex gap-md">
+                    <select class="form-control">
+                        <option>Todas as notificações</option>
+                        <option>Não lidas</option>
+                        <option>Lidas</option>
+                    </select>
+                    <select class="form-control">
+                        <option>Todas as datas</option>
+                        <option>Hoje</option>
+                        <option>Esta semana</option>
+                        <option>Este mês</option>
+                    </select>
+                    <button class="btn btn-secondary">Aplicar Filtros</button>
+                </div>
+            </div>
+
+            <!-- Lista de Notificações -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Notificações Recentes</h2>
+                    <button class="btn btn-sm btn-secondary">Marcar todas como lidas</button>
+                </div>
+
+                <ul class="notifications-list">
+                    <li class="notification-item unread">
+                        <div class="notification-content">
+                            <div class="notification-icon">📝</div>
+                            <div class="notification-text">
+                                <strong>Novo plano de aula disponível</strong>
+                                <p>O plano de aula para Matemática 9º A foi publicado pelo Prof. João Silva.</p>
+                            </div>
+                            <div class="notification-time">há 10 min</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Ver</button>
+                            <button class="btn btn-sm btn-secondary">Marcar como lida</button>
+                        </div>
+                    </li>
+                    <li class="notification-item unread">
+                        <div class="notification-content">
+                            <div class="notification-icon">📊</div>
+                            <div class="notification-text">
+                                <strong>Notas da Av2 publicadas</strong>
+                                <p>As notas da Avaliação 2 de Física 8º B estão disponíveis para visualização.</p>
+                            </div>
+                            <div class="notification-time">há 1 hora</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Ver Notas</button>
+                            <button class="btn btn-sm btn-secondary">Marcar como lida</button>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-icon">📅</div>
+                            <div class="notification-text">
+                                <strong>Lembrete: Frequência hoje</strong>
+                                <p>Não esqueça de registrar a frequência da aula de Matemática 9º A.</p>
+                            </div>
+                            <div class="notification-time">há 2 horas</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Registrar</button>
+                            <button class="btn btn-sm btn-secondary">Marcar como lida</button>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-icon">👥</div>
+                            <div class="notification-text">
+                                <strong>Novo aluno matriculado</strong>
+                                <p>Maria Santos foi matriculada na turma de Português 7º A.</p>
+                            </div>
+                            <div class="notification-time">há 1 dia</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Ver Perfil</button>
+                            <button class="btn btn-sm btn-secondary">Marcar como lida</button>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-icon">⚠️</div>
+                            <div class="notification-text">
+                                <strong>Alerta: Faltas excessivas</strong>
+                                <p>O aluno Carlos Mendes atingiu 15% de faltas em Matemática.</p>
+                            </div>
+                            <div class="notification-time">há 2 dias</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                            <button class="btn btn-sm btn-secondary">Marcar como lida</button>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="btn btn-sm btn-secondary" disabled>Anterior</button>
+                    <span class="pagination-info">Página 1 de 3</span>
+                    <button class="btn btn-sm btn-secondary">Próxima</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

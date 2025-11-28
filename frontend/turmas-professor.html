@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Minhas Turmas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-sm" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Dashboard</a></li>
+                <li><a href="turmas-professor.html" class="active">📚 Minhas Turmas</a></li>
+                <li><a href="alunos-professor.html">👥 Alunos</a></li>
+                <li><a href="lancar-notas.html">📊 Lançar Notas</a></li>
+                <li><a href="frequencia-professor.html">📅 Frequência</a></li>
+                <li><a href="criar-plano-aula.html">📝 Planos de Aula</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Minhas Turmas</h1>
+                <p>Gerencie suas turmas e veja detalhes de cada uma.</p>
+            </div>
+
+            <!-- Turmas -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Turmas Atuais</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Turma</th>
+                                <th>Disciplina</th>
+                                <th>Alunos</th>
+                                <th>Média</th>
+                                <th>Presença</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9º A</td>
+                                <td>Matemática</td>
+                                <td>32</td>
+                                <td>8.1</td>
+                                <td>94%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                    <button class="btn btn-sm btn-secondary">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9º B</td>
+                                <td>Matemática</td>
+                                <td>28</td>
+                                <td>7.5</td>
+                                <td>91%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                    <button class="btn btn-sm btn-secondary">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8º A</td>
+                                <td>Física</td>
+                                <td>30</td>
+                                <td>7.9</td>
+                                <td>93%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                    <button class="btn btn-sm btn-secondary">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8º B</td>
+                                <td>Física</td>
+                                <td>30</td>
+                                <td>7.2</td>
+                                <td>89%</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary">Ver Detalhes</button>
+                                    <button class="btn btn-sm btn-secondary">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Ações Rápidas -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Criar Nova Turma</a>
+                <a href="relatorios.html" class="btn btn-secondary">Ver Relatórios</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

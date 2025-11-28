@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Lançar Notas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">3</span>
+                    </a>
+                    <button id="theme-toggle" class="btn btn-secondary btn-small" title="Alternar Tema">🌙</button>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Painel</a></li>
+                <li><a href="turmas-professor.html">📚 Minhas Turmas</a></li>
+                <li><a href="alunos-professor.html">👥 Alunos</a></li>
+                <li><a href="lancar-notas.html" class="ativo">📊 Lançar Notas</a></li>
+                <li><a href="frequencia-professor.html">📅 Frequência</a></li>
+                <li><a href="criar-plano-aula.html">📝 Planos de Aula</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Lançar Notas</h1>
+                <p>Registre as notas dos alunos para as avaliações.</p>
+            </div>
+
+            <!-- Class and Assessment Selection -->
+            <div class="card margin-bottom-large">
+                <div class="card-header">
+                    <h2 class="card-title">Selecionar Turma e Avaliação</h2>
+                </div>
+                <div style="display: flex; gap: var(--md); flex-wrap: wrap;">
+                    <select class="form-input" style="flex: 1; min-width: 200px;">
+                        <option>Selecione a Turma</option>
+                        <option>9º A - Matemática</option>
+                        <option>9º B - Matemática</option>
+                        <option>8º A - Física</option>
+                        <option>8º B - Física</option>
+                    </select>
+                    <select class="form-input" style="flex: 1; min-width: 200px;">
+                        <option>Selecione a Avaliação</option>
+                        <option>Av1</option>
+                        <option>Av2</option>
+                        <option>Av3</option>
+                        <option>Recuperação</option>
+                    </select>
+                    <button class="btn btn-primary">Carregar Alunos</button>
+                </div>
+            </div>
+
+            <!-- Grades Table -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Notas - 9º A - Matemática - Av1</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome do Aluno</th>
+                                <th>Nota</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ana Silva</td>
+                                <td><input type="number" class="form-input" min="0" max="10" step="0.1" value="8.5"></td>
+                                <td><span class="badge badge-success">Lançada</span></td>
+                                <td><button class="btn btn-small btn-secondary">Salvar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Mendes</td>
+                                <td><input type="number" class="form-input" min="0" max="10" step="0.1" value="5.2"></td>
+                                <td><span class="badge badge-success">Lançada</span></td>
+                                <td><button class="btn btn-small btn-secondary">Salvar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Lima</td>
+                                <td><input type="number" class="form-input" min="0" max="10" step="0.1" value="4.9"></td>
+                                <td><span class="badge badge-success">Lançada</span></td>
+                                <td><button class="btn btn-small btn-secondary">Salvar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Maria Costa</td>
+                                <td><input type="number" class="form-input" min="0" max="10" step="0.1"></td>
+                                <td><span class="badge badge-warning">Pendente</span></td>
+                                <td><button class="btn btn-small btn-secondary">Salvar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <a href="#" class="btn btn-primary">Salvar Todas as Notas</a>
+                <a href="#" class="btn btn-secondary">Importar Planilha</a>
+                <a href="relatorios.html" class="btn btn-secondary">Ver Relatórios</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

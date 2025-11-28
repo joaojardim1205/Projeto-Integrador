@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Relatórios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard-professor.html">🏠 Dashboard</a></li>
+                <li><a href="lancar-notas.html">📝 Lançar Notas</a></li>
+                <li><a href="criar-plano-aula.html">📋 Criar Plano</a></li>
+                <li><a href="gerenciar-turmas.html">👥 Gerenciar Turmas</a></li>
+                <li><a href="relatorios.html" class="active">📊 Relatórios</a></li>
+                <li><a href="perfil.html">⚙️ Perfil</a></li>
+                <li><a href="index.html">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Relatórios</h1>
+                <p>Gere relatórios detalhados de desempenho e frequência.</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="card filters-form">
+                <div class="card-header">
+                    <h2 class="card-title">Configurar Relatório</h2>
+                </div>
+
+                <form class="form" onsubmit="gerarRelatorio(event)">
+                    <div class="filters-grid">
+                        <div class="form-group">
+                            <label for="tipo-relatorio" class="form-label">Tipo de Relatório</label>
+                            <select id="tipo-relatorio" class="form-input" onchange="atualizarFiltros()" required>
+                                <option value="">Selecione...</option>
+                                <option value="individual">Relatório Individual</option>
+                                <option value="turma">Relatório de Turma</option>
+                                <option value="desempenho">Relatório de Desempenho</option>
+                                <option value="frequencia">Relatório de Frequência</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="periodo" class="form-label">Período</label>
+                            <select id="periodo" class="form-input" required>
+                                <option value="1bim">1º Bimestre</option>
+                                <option value="2bim">2º Bimestre</option>
+                                <option value="3bim">3º Bimestre</option>
+                                <option value="4bim">4º Bimestre</option>
+                                <option value="anual">Ano Letivo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="turma" class="form-label">Turma</label>
+                            <select id="turma" class="form-input">
+                                <option value="">Todas as turmas</option>
+                                <option value="3a">3º A - Matemática</option>
+                                <option value="3b">3º B - Matemática</option>
+                                <option value="2c">2º C - Física</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="disciplina" class="form-label">Disciplina</label>
+                            <select id="disciplina" class="form-input">
+                                <option value="">Todas as disciplinas</option>
+                                <option value="matematica">Matemática</option>
+                                <option value="portugues">Português</option>
+                                <option value="fisica">Física</option>
+                                <option value="quimica">Química</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="aluno-group" style="display: none;">
+                            <label for="aluno" class="form-label">Aluno</label>
+                            <select id="aluno" class="form-input">
+                                <option value="">Selecione um aluno...</option>
+                                <option value="ana">Ana Silva</option>
+                                <option value="bruno">Bruno Santos</option>
+                                <option value="carlos">Carlos Oliveira</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formato" class="form-label">Formato de Saída</label>
+                            <select id="formato" class="form-input" required>
+                                <option value="pdf">PDF (Visualização)</option>
+                                <option value="excel">Excel/CSV (Análise)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Opções</label>
+                            <div style="display: flex; gap: var(--md); align-items: center;">
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="comparacao-turma">
+                                    Comparação com turma
+                                </label>
+                                <label style="display: flex; align-items: center; gap: var(--sm);">
+                                    <input type="checkbox" id="ranking">
+                                    Incluir ranking
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="salvarConfiguracao()">Salvar Configuração</button>
+                        <button type="submit" class="btn btn-primary">Gerar Relatório</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Preview do Relatório -->
+            <div class="card report-preview" id="report-preview" style="display: none;">
+                <div class="card-header">
+                    <h2 class="card-title">Preview do Relatório</h2>
+                </div>
+
+                <div id="report-content">
+                    <!-- Conteúdo será inserido dinamicamente -->
+                </div>
+
+                <div class="form-actions" style="margin-top: var(--lg);">
+                    <button class="btn btn-secondary" onclick="baixarRelatorio()">📥 Baixar</button>
+                    <button class="btn btn-secondary" onclick="imprimirRelatorio()">🖨️ Imprimir</button>
+                    <button class="btn btn-secondary" onclick="enviarEmail()">📧 Enviar por Email</button>
+                </div>
+            </div>
+
+            <!-- Relatórios Salvos -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Relatórios Salvos</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Relatório Mensal 3ºA</td>
+                                <td>Relatório de Turma</td>
+                                <td>15/11/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary" onclick="carregarRelatorio('mensal-3a')">Carregar</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirRelatorio('mensal-3a')">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Desempenho Ana Silva</td>
+                                <td>Relatório Individual</td>
+                                <td>10/11/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary" onclick="carregarRelatorio('ana-silva')">Carregar</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirRelatorio('ana-silva')">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Frequência Geral</td>
+                                <td>Relatório de Frequência</td>
+                                <td>05/11/2024</td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary" onclick="carregarRelatorio('frequencia')">Carregar</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirRelatorio('frequencia')">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Agendamento -->
+    <div id="agendamentoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Agendar Envio Automático</h3>
+                <button class="modal-close" onclick="fecharAgendamentoModal()">&times;</button>
+            </div>
+
+            <form style="padding: var(--lg);" onsubmit="agendarRelatorio(event)">
+                <div class="form-group">
+                    <label for="frequencia" class="form-label">Frequência</label>
+                    <select id="frequencia" class="form-input" required>
+                        <option value="semanal">Semanal</option>
+                        <option value="mensal">Mensal</option>
+                        <option value="bimestral">Bimestral</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dia-envio" class="form-label">Dia do Envio</label>
+                    <input type="number" id="dia-envio" class="form-input" min="1" max="31" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hora-envio" class="form-label">Horário</label>
+                    <input type="time" id="hora-envio" class="form-input" value="08:00" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="destinatarios" class="form-label">Destinatários</label>
+                    <textarea id="destinatarios" class="form-input" rows="3" placeholder="Emails separados por vírgula" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="fecharAgendamentoModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Agendar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
