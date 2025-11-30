@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Comunicados Responsável</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Maria Santos</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <!-- Dashboard Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Dashboard</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard-responsavel.html"><span class="sidebar-icon">🏠</span> Visão Geral</a></li>
+                </ul>
+            </div>
+
+            <!-- Gestão Acadêmica Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Gestão Acadêmica</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="filhos-responsavel.html"><span class="sidebar-icon">👨‍👩‍👧‍👦</span> Meus Filhos</a></li>
+                    <li><a href="desempenho-responsavel.html"><span class="sidebar-icon">📊</span> Desempenho</a></li>
+                    <li><a href="frequencia-responsavel.html"><span class="sidebar-icon">📅</span> Frequência</a></li>
+                </ul>
+            </div>
+
+            <!-- Comunicação Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Comunicação</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="comunicados-responsavel.html" class="active"><span class="sidebar-icon">📢</span> Comunicados</a></li>
+                </ul>
+            </div>
+
+            <!-- Configurações Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Configurações</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="perfil.html"><span class="sidebar-icon">⚙️</span> Perfil</a></li>
+                    <li><a href="index.html"><span class="sidebar-icon">🚪</span> Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Comunicados da Escola</h1>
+                <p>Acompanhe todas as comunicações importantes da escola.</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="card mb-xl">
+                <div class="card-header">
+                    <h2 class="card-title">Filtros</h2>
+                </div>
+                <div class="flex gap-md">
+                    <select class="form-control">
+                        <option>Todos os Comunicados</option>
+                        <option>Reuniões de Pais</option>
+                        <option>Avisos Gerais</option>
+                        <option>Notas e Frequência</option>
+                    </select>
+                    <select class="form-control">
+                        <option>Todos os Filhos</option>
+                        <option>Ana Silva</option>
+                        <option>Pedro Santos</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Lista de Comunicados -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Comunicados Recentes</h2>
+                </div>
+
+                <div class="notifications-list">
+                    <div class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Reunião de Pais - 1º Bimestre</strong>
+                                <p>Convocamos todos os responsáveis para reunião no dia 15/12 às 19h na sala de reuniões da escola. Serão discutidos os resultados do primeiro bimestre e planejamento para o próximo período.</p>
+                                <small><strong>Data:</strong> 15/12/2023 | <strong>Horário:</strong> 19:00 | <strong>Local:</strong> Sala de Reuniões</small>
+                            </div>
+                            <div class="notification-time">há 2 dias</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Confirmar Presença</button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Avaliação Bimestral - Matemática</strong>
+                                <p>As notas da avaliação bimestral de Matemática foram lançadas no sistema. Ana Silva obteve média 8.2. Os trabalhos de recuperação estarão disponíveis a partir de amanhã.</p>
+                                <small><strong>Disciplina:</strong> Matemática | <strong>Professor:</strong> João Silva | <strong>Turma:</strong> 1º Ano A</small>
+                            </div>
+                            <div class="notification-time">há 1 semana</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-secondary">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Feriado - Dia da Consciência Negra</strong>
+                                <p>Informamos que a escola não funcionará no dia 20/11 em virtude do feriado municipal. As aulas serão compensadas conforme calendário escolar.</p>
+                                <small><strong>Data:</strong> 20/11/2023 | <strong>Tipo:</strong> Feriado Municipal</small>
+                            </div>
+                            <div class="notification-time">há 2 semanas</div>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Campanha de Vacinação</strong>
+                                <p>A escola realizará campanha de vacinação contra gripe no dia 10/12. É obrigatório apresentar carteira de vacinação atualizada.</p>
+                                <small><strong>Data:</strong> 10/12/2023 | <strong>Horário:</strong> 08:00 - 12:00 | <strong>Local:</strong> Ginásio</small>
+                            </div>
+                            <div class="notification-time">há 3 semanas</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-primary">Agendar</button>
+                        </div>
+                    </div>
+
+                    <div class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Feira de Ciências - Inscrições Abertas</strong>
+                                <p>As inscrições para a Feira de Ciências estão abertas até 30/11. Todos os alunos do 1º ao 5º ano podem participar com projetos científicos.</p>
+                                <small><strong>Prazo de Inscrição:</strong> 30/11/2023 | <strong>Evento:</strong> 15/12/2023</small>
+                            </div>
+                            <div class="notification-time">há 1 mês</div>
+                        </div>
+                        <div class="notification-actions">
+                            <button class="btn btn-sm btn-secondary">Inscrever-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="quick-actions">
+                <a href="dashboard-responsavel.html" class="btn btn-secondary">Voltar ao Dashboard</a>
+                <a href="#" class="btn btn-primary">Marcar Todos como Lidos</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

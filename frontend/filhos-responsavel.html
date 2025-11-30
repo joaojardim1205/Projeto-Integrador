@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Meus Filhos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Maria Santos</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <!-- Dashboard Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Dashboard</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard-responsavel.html"><span class="sidebar-icon">🏠</span> Visão Geral</a></li>
+                </ul>
+            </div>
+
+            <!-- Gestão Acadêmica Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Gestão Acadêmica</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="filhos-responsavel.html" class="active"><span class="sidebar-icon">👨‍👩‍👧‍👦</span> Meus Filhos</a></li>
+                    <li><a href="desempenho-responsavel.html"><span class="sidebar-icon">📊</span> Desempenho</a></li>
+                    <li><a href="frequencia-responsavel.html"><span class="sidebar-icon">📅</span> Frequência</a></li>
+                </ul>
+            </div>
+
+            <!-- Comunicação Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Comunicação</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="comunicados-responsavel.html"><span class="sidebar-icon">📢</span> Comunicados</a></li>
+                </ul>
+            </div>
+
+            <!-- Configurações Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Configurações</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="perfil.html"><span class="sidebar-icon">⚙️</span> Perfil</a></li>
+                    <li><a href="index.html"><span class="sidebar-icon">🚪</span> Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Meus Filhos</h1>
+                <p>Gerencie as informações dos seus filhos matriculados na escola.</p>
+            </div>
+
+            <!-- Lista de Filhos -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Filhos Matriculados</h2>
+                    <button class="btn btn-primary">Adicionar Filho</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Turma</th>
+                                <th>Série</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ana Silva</td>
+                                <td>1º Ano A</td>
+                                <td>1º Ano</td>
+                                <td><span class="badge badge-success">Ativo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary">Editar</button>
+                                    <button class="btn btn-sm btn-danger">Remover</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pedro Santos</td>
+                                <td>2º Ano B</td>
+                                <td>2º Ano</td>
+                                <td><span class="badge badge-success">Ativo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-secondary">Editar</button>
+                                    <button class="btn btn-sm btn-danger">Remover</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Detalhes do Filho Selecionado -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Informações de Ana Silva</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-lg">
+                    <div>
+                        <h3>Dados Pessoais</h3>
+                        <p><strong>Data de Nascimento:</strong> 15/05/2015</p>
+                        <p><strong>CPF:</strong> 123.456.789-00</p>
+                        <p><strong>Endereço:</strong> Rua das Flores, 123 - Centro</p>
+                        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+                    </div>
+                    <div>
+                        <h3>Dados Escolares</h3>
+                        <p><strong>Matrícula:</strong> 2023001</p>
+                        <p><strong>Turma:</strong> 1º Ano A</p>
+                        <p><strong>Turno:</strong> Manhã</p>
+                        <p><strong>Data de Matrícula:</strong> 01/02/2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="quick-actions">
+                <a href="dashboard-responsavel.html" class="btn btn-secondary">Voltar ao Dashboard</a>
+                <a href="#" class="btn btn-primary">Editar Informações</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

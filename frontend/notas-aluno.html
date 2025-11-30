@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyClass - Minhas Notas</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -22,7 +21,6 @@
                         <span>🔔</span>
                         <span class="notification-badge">2</span>
                     </a>
-                    <button id="alternar-tema" class="btn btn-secondary btn-small" title="Alternar Tema">🌙</button>
                     <a href="perfil.html" class="user-profile-link">👤 Ana Silva</a>
                 </div>
             </div>
@@ -32,14 +30,32 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <nav>
-            <ul class="sidebar-menu">
-                <li><a href="dashboard-aluno.html">🏠 Dashboard</a></li>
-                <li><a href="notas-aluno.html" class="active">📊 Minhas Notas</a></li>
-                <li><a href="planos-aluno.html">📝 Planos de Aula</a></li>
-                <li><a href="frequencia-aluno.html">📅 Frequência</a></li>
-                <li><a href="perfil.html">⚙️ Perfil</a></li>
-                <li><a href="index.html">🚪 Sair</a></li>
-            </ul>
+            <!-- Dashboard Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Dashboard</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard-aluno.html"><span class="sidebar-icon">🏠</span> Visão Geral</a></li>
+                </ul>
+            </div>
+
+            <!-- Acadêmico Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Acadêmico</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="notas-aluno.html" class="active"><span class="sidebar-icon">📊</span> Minhas Notas</a></li>
+                    <li><a href="planos-aluno.html"><span class="sidebar-icon">📝</span> Planos de Aula</a></li>
+                    <li><a href="frequencia-aluno.html"><span class="sidebar-icon">📅</span> Frequência</a></li>
+                </ul>
+            </div>
+
+            <!-- Configurações Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Configurações</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="perfil.html"><span class="sidebar-icon">⚙️</span> Perfil</a></li>
+                    <li><a href="index.html"><span class="sidebar-icon">🚪</span> Sair</a></li>
+                </ul>
+            </div>
         </nav>
     </aside>
 

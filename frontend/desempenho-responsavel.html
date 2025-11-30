@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Desempenho Responsável</title>
+    <link rel="stylesheet" href="css/styles.css">
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Maria Santos</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <!-- Dashboard Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Dashboard</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard-responsavel.html"><span class="sidebar-icon">🏠</span> Visão Geral</a></li>
+                </ul>
+            </div>
+
+            <!-- Gestão Acadêmica Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Gestão Acadêmica</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="filhos-responsavel.html"><span class="sidebar-icon">👨‍👩‍👧‍👦</span> Meus Filhos</a></li>
+                    <li><a href="desempenho-responsavel.html" class="active"><span class="sidebar-icon">📊</span> Desempenho</a></li>
+                    <li><a href="frequencia-responsavel.html"><span class="sidebar-icon">📅</span> Frequência</a></li>
+                </ul>
+            </div>
+
+            <!-- Comunicação Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Comunicação</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="comunicados-responsavel.html"><span class="sidebar-icon">📢</span> Comunicados</a></li>
+                </ul>
+            </div>
+
+            <!-- Configurações Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Configurações</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="perfil.html"><span class="sidebar-icon">⚙️</span> Perfil</a></li>
+                    <li><a href="index.html"><span class="sidebar-icon">🚪</span> Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Desempenho dos Filhos</h1>
+                <p>Acompanhe o progresso acadêmico detalhado dos seus filhos.</p>
+            </div>
+
+            <!-- Seleção de Filho -->
+            <div class="card mb-xl">
+                <div class="card-header">
+                    <h2 class="card-title">Selecionar Filho</h2>
+                </div>
+
+                <div style="display: flex; gap: var(--md); flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="selectChild('ana')">Ana Silva</button>
+                    <button class="btn btn-secondary" onclick="selectChild('pedro')">Pedro Santos</button>
+                </div>
+            </div>
+
+            <!-- Gráfico de Desempenho -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Evolução das Notas - <span id="nome-aluno">Ana Silva</span></h2>
+                </div>
+
+                <div class="chart-placeholder">
+                    <p>Gráfico de evolução das médias bimestrais por disciplina</p>
+                    <!-- Aqui seria implementado um gráfico com Chart.js ou similar -->
+                </div>
+            </div>
+
+            <!-- Notas Detalhadas por Bimestre -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Notas por Bimestre</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Disciplina</th>
+                                <th>1º Bim</th>
+                                <th>2º Bim</th>
+                                <th>3º Bim</th>
+                                <th>4º Bim</th>
+                                <th>Média Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Matemática</td>
+                                <td>8.5</td>
+                                <td>7.8</td>
+                                <td>9.0</td>
+                                <td>-</td>
+                                <td>8.4</td>
+                            </tr>
+                            <tr>
+                                <td>Português</td>
+                                <td>7.5</td>
+                                <td>8.2</td>
+                                <td>7.5</td>
+                                <td>-</td>
+                                <td>7.7</td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>6.0</td>
+                                <td>6.5</td>
+                                <td>7.0</td>
+                                <td>-</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>Química</td>
+                                <td>5.0</td>
+                                <td>5.5</td>
+                                <td>6.0</td>
+                                <td>-</td>
+                                <td>5.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Análise de Desempenho -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Análise de Desempenho</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-lg">
+                    <div>
+                        <h3>Pontos Fortes</h3>
+                        <ul>
+                            <li>Excelente desempenho em Matemática</li>
+                            <li>Boa evolução em Português</li>
+                            <li>Presença regular nas aulas</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Áreas de Melhoria</h3>
+                        <ul>
+                            <li>Química precisa de atenção</li>
+                            <li>Física com médias baixas</li>
+                            <li>Participação em atividades extracurriculares</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recomendações -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Recomendações dos Professores</h2>
+                </div>
+
+                <ul class="notifications-list">
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Prof. João Silva - Matemática</strong>
+                                <p>Ana tem mostrado grande progresso. Recomendo reforço em geometria.</p>
+                            </div>
+                            <div class="notification-time">há 1 semana</div>
+                        </div>
+                    </li>
+                    <li class="notification-item">
+                        <div class="notification-content">
+                            <div class="notification-text">
+                                <strong>Prof. Maria Santos - Química</strong>
+                                <p>Pedro precisa de ajuda extra em reações químicas. Sugiro aulas particulares.</p>
+                            </div>
+                            <div class="notification-time">há 2 semanas</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Ações -->
+            <div class="quick-actions">
+                <a href="dashboard-responsavel.html" class="btn btn-secondary">Voltar ao Dashboard</a>
+                <a href="#" class="btn btn-primary">Baixar Relatório Completo</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

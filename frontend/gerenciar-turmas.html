@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyClass - Gerenciar Turmas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="flex items-center gap-md">
+                    <button class="menu-toggle">☰</button>
+                    <div class="logo">EasyClass</div>
+                </div>
+
+                <div class="user-menu">
+                    <a href="notificacoes.html" class="notifications">
+                        <span>🔔</span>
+                        <span class="notification-badge">1</span>
+                    </a>
+                    <a href="perfil.html" class="user-profile-link">👤 Prof. João Silva</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <!-- Dashboard Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Dashboard</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard-professor.html"><span class="sidebar-icon">🏠</span> Visão Geral</a></li>
+                </ul>
+            </div>
+
+            <!-- Gestão Acadêmica Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Gestão Acadêmica</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="turmas-professor.html"><span class="sidebar-icon">📚</span> Minhas Turmas</a></li>
+                    <li><a href="alunos-professor.html"><span class="sidebar-icon">👥</span> Alunos</a></li>
+                    <li><a href="gerenciar-turmas.html" class="active"><span class="sidebar-icon">👥</span> Gerenciar Turmas</a></li>
+                </ul>
+            </div>
+
+            <!-- Ensino Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Ensino</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="lancar-notas.html"><span class="sidebar-icon">📊</span> Lançar Notas</a></li>
+                    <li><a href="frequencia-professor.html"><span class="sidebar-icon">📅</span> Frequência</a></li>
+                    <li><a href="criar-plano-aula.html"><span class="sidebar-icon">📝</span> Planos de Aula</a></li>
+                </ul>
+            </div>
+
+            <!-- Configurações Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Configurações</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="perfil.html"><span class="sidebar-icon">⚙️</span> Perfil</a></li>
+                    <li><a href="index.html"><span class="sidebar-icon">🚪</span> Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <div class="breadcrumb">
+                    <a href="dashboard-professor.html">Dashboard</a> > Gerenciar Turmas
+                </div>
+                <h1>Gerenciar Turmas</h1>
+                <p>Edite detalhes das turmas e gerencie os alunos matriculados.</p>
+            </div>
+
+            <!-- Lista de Turmas -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Turmas Atuais</h2>
+                    <button class="btn btn-primary" onclick="abrirModalNovaTurma()">Criar Nova Turma</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Turma</th>
+                                <th>Disciplina</th>
+                                <th>Ano/Série</th>
+                                <th>Alunos</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9º A</td>
+                                <td>Matemática</td>
+                                <td>9º Ano</td>
+                                <td>32</td>
+                                <td><span class="badge badge-success">Ativa</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editarTurma('9A')">Editar</button>
+                                    <button class="btn btn-sm btn-secondary" onclick="gerenciarAlunos('9A')">Alunos</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirTurma('9A')">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9º B</td>
+                                <td>Matemática</td>
+                                <td>9º Ano</td>
+                                <td>28</td>
+                                <td><span class="badge badge-success">Ativa</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editarTurma('9B')">Editar</button>
+                                    <button class="btn btn-sm btn-secondary" onclick="gerenciarAlunos('9B')">Alunos</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirTurma('9B')">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8º A</td>
+                                <td>Física</td>
+                                <td>8º Ano</td>
+                                <td>30</td>
+                                <td><span class="badge badge-success">Ativa</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editarTurma('8A')">Editar</button>
+                                    <button class="btn btn-sm btn-secondary" onclick="gerenciarAlunos('8A')">Alunos</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirTurma('8A')">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8º B</td>
+                                <td>Física</td>
+                                <td>8º Ano</td>
+                                <td>30</td>
+                                <td><span class="badge badge-warning">Inativa</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" onclick="editarTurma('8B')">Editar</button>
+                                    <button class="btn btn-sm btn-secondary" onclick="gerenciarAlunos('8B')">Alunos</button>
+                                    <button class="btn btn-sm btn-danger" onclick="excluirTurma('8B')">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Estatísticas das Turmas -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Turmas Totais</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">120</div>
+                    <div class="stat-label">Alunos Totais</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Turmas Ativas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏸️</div>
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Turmas Inativas</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Editar Turma -->
+    <div id="modalEditarTurma" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Editar Turma</h3>
+                <button class="modal-close" onclick="fecharModalEditar()">&times;</button>
+            </div>
+
+            <form class="form" id="formEditarTurma">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-nome" class="form-label">Nome da Turma *</label>
+                        <input type="text" id="edit-nome" name="nome" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-disciplina" class="form-label">Disciplina *</label>
+                        <select id="edit-disciplina" name="disciplina" class="form-input" required>
+                            <option value="matematica">Matemática</option>
+                            <option value="portugues">Português</option>
+                            <option value="fisica">Física</option>
+                            <option value="quimica">Química</option>
+                            <option value="historia">História</option>
+                            <option value="geografia">Geografia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="edit-ano" class="form-label">Ano/Série *</label>
+                        <select id="edit-ano" name="ano" class="form-input" required>
+                            <option value="6">6º Ano</option>
+                            <option value="7">7º Ano</option>
+                            <option value="8">8º Ano</option>
+                            <option value="9">9º Ano</option>
+                            <option value="1em">1º Ensino Médio</option>
+                            <option value="2em">2º Ensino Médio</option>
+                            <option value="3em">3º Ensino Médio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-status" class="form-label">Status</label>
+                        <select id="edit-status" name="status" class="form-input">
+                            <option value="ativa">Ativa</option>
+                            <option value="inativa">Inativa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-descricao" class="form-label">Descrição</label>
+                    <textarea id="edit-descricao" name="descricao" class="form-input" rows="3" placeholder="Descrição opcional da turma..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="fecharModalEditar()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Gerenciar Alunos -->
+    <div id="modalGerenciarAlunos" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 class="modal-title">Gerenciar Alunos - <span id="turma-nome"></span></h3>
+                <button class="modal-close" onclick="fecharModalAlunos()">&times;</button>
+            </div>
+
+            <div style="padding: var(--lg);">
+                <div class="form-group" style="margin-bottom: var(--lg);">
+                    <div style="display: flex; gap: var(--sm);">
+                        <input type="text" id="buscar-aluno" class="form-input" placeholder="Buscar aluno..." style="flex: 1;">
+                        <button class="btn btn-primary" onclick="adicionarAluno()">Adicionar Aluno</button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Matrícula</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-alunos">
+                            <!-- Alunos serão carregados dinamicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nova Turma -->
+    <div id="modalNovaTurma" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Criar Nova Turma</h3>
+                <button class="modal-close" onclick="fecharModalNovaTurma()">&times;</button>
+            </div>
+
+            <form class="form" id="formNovaTurma">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nova-nome" class="form-label">Nome da Turma *</label>
+                        <input type="text" id="nova-nome" name="nome" class="form-input" placeholder="Ex: 9º A" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nova-disciplina" class="form-label">Disciplina *</label>
+                        <select id="nova-disciplina" name="disciplina" class="form-input" required>
+                            <option value="">Selecione...</option>
+                            <option value="matematica">Matemática</option>
+                            <option value="portugues">Português</option>
+                            <option value="fisica">Física</option>
+                            <option value="quimica">Química</option>
+                            <option value="historia">História</option>
+                            <option value="geografia">Geografia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nova-ano" class="form-label">Ano/Série *</label>
+                        <select id="nova-ano" name="ano" class="form-input" required>
+                            <option value="">Selecione...</option>
+                            <option value="6">6º Ano</option>
+                            <option value="7">7º Ano</option>
+                            <option value="8">8º Ano</option>
+                            <option value="9">9º Ano</option>
+                            <option value="1em">1º Ensino Médio</option>
+                            <option value="2em">2º Ensino Médio</option>
+                            <option value="3em">3º Ensino Médio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nova-capacidade" class="form-label">Capacidade Máxima</label>
+                        <input type="number" id="nova-capacidade" name="capacidade" class="form-input" value="35" min="10" max="50">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nova-descricao" class="form-label">Descrição</label>
+                    <textarea id="nova-descricao" name="descricao" class="form-input" rows="3" placeholder="Descrição opcional da turma..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="fecharModalNovaTurma()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Criar Turma</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Funções para modais
+        function abrirModalNovaTurma() {
+            document.getElementById('modalNovaTurma').style.display = 'block';
+        }
+
+        function fecharModalNovaTurma() {
+            document.getElementById('modalNovaTurma').style.display = 'none';
+        }
+
+        function editarTurma(turmaId) {
+            // Carregar dados da turma
+            document.getElementById('modalEditarTurma').style.display = 'block';
+        }
+
+        function fecharModalEditar() {
+            document.getElementById('modalEditarTurma').style.display = 'none';
+        }
+
+        function gerenciarAlunos(turmaId) {
+            document.getElementById('turma-nome').textContent = turmaId;
+            document.getElementById('modalGerenciarAlunos').style.display = 'block';
+            // Carregar lista de alunos
+        }
+
+        function fecharModalAlunos() {
+            document.getElementById('modalGerenciarAlunos').style.display = 'none';
+        }
+
+        function adicionarAluno() {
+            // Implementar adição de aluno
+            alert('Funcionalidade de adicionar aluno será implementada');
+        }
+
+        function excluirTurma(turmaId) {
+            if (confirm('Tem certeza que deseja excluir esta turma?')) {
+                // Implementar exclusão
+                alert('Turma excluída com sucesso!');
+            }
+        }
+
+        // Fechar modais ao clicar fora
+        window.onclick = function(event) {
+            const modals = ['modalEditarTurma', 'modalGerenciarAlunos', 'modalNovaTurma'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

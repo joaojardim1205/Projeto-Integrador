@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyClass - Criar Plano de Aula</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -31,15 +28,42 @@
     <!-- Menu Lateral -->
     <aside class="sidebar">
         <nav>
-            <ul class="sidebar-menu">
-                <li><a href="dashboard-professor.html">🏠 Painel</a></li>
-                <li><a href="lancar-notas.html">📝 Lançar Notas</a></li>
-                <li><a href="criar-plano-aula.html" class="ativo">📋 Criar Plano</a></li>
-                <li><a href="gerenciar-turmas.html">👥 Gerenciar Turmas</a></li>
-                <li><a href="relatorios.html">📊 Relatórios</a></li>
-                <li><a href="perfil.html">⚙️ Perfil</a></li>
-                <li><a href="index.html">🚪 Sair</a></li>
-            </ul>
+            <!-- Dashboard Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Dashboard</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard-professor.html"><span class="sidebar-icon">🏠</span> Visão Geral</a></li>
+                </ul>
+            </div>
+
+            <!-- Gestão Acadêmica Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Gestão Acadêmica</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="turmas-professor.html"><span class="sidebar-icon">📚</span> Minhas Turmas</a></li>
+                    <li><a href="alunos-professor.html"><span class="sidebar-icon">👥</span> Alunos</a></li>
+                    <li><a href="gerenciar-turmas.html"><span class="sidebar-icon">👥</span> Gerenciar Turmas</a></li>
+                </ul>
+            </div>
+
+            <!-- Ensino Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Ensino</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="lancar-notas.html"><span class="sidebar-icon">📊</span> Lançar Notas</a></li>
+                    <li><a href="frequencia-professor.html"><span class="sidebar-icon">📅</span> Frequência</a></li>
+                    <li><a href="criar-plano-aula.html" class="active"><span class="sidebar-icon">📝</span> Planos de Aula</a></li>
+                </ul>
+            </div>
+
+            <!-- Configurações Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Configurações</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="perfil.html"><span class="sidebar-icon">⚙️</span> Perfil</a></li>
+                    <li><a href="index.html"><span class="sidebar-icon">🚪</span> Sair</a></li>
+                </ul>
+            </div>
         </nav>
     </aside>
 
